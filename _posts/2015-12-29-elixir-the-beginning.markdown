@@ -16,6 +16,8 @@ There are a lot of things I love about the Elixir syntax as well, like the patte
 
 Just thought of something: of course I will be writing for the web, and perhaps I will find a way to use ClojureScript on the client side. If it's not already made, maybe I'll code a [Phoenix][phoenix] wrapper in ClojureScript, and use [Reagent][reagent] (a gorgeous [React][react] wrapper) to use functional programming on the client side as well. Yeah, that sounds good. Let's do that first :)
 
+{% include twitter.html %}
+
 [elixir]: http://elixir-lang.org
 [clojure]: http://clojure.org
 [jose-valim]: https://twitter.com/josevalim?lang=en
