@@ -3,6 +3,7 @@ layout: post
 title: "First post"
 date: 2015-12-29 15:51:00
 categories: development
+comments: true
 ---
 This is my first blog post (just to test things). My first actual blog with 'real' content will arrive soon.
 
