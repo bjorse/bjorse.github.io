@@ -1,0 +1,11 @@
+# Site settings
+title: Bjorse Development
+email: bjorse@gmail.com
+description: A developer blog
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://www.github.com/bjorse" # the base hostname & protocol for your site
+twitter_username: bjorse
+github_username:  bjorse
+
+# Build settings
+markdown: kramdown
