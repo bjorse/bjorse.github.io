@@ -1,5 +1,5 @@
 # Site settings
-title: Bjorse Development
+title: bjorse/blog
 email: bjorse@gmail.com
 description: A developer blog
 baseurl: "" # the subpath of your site, e.g. /blog/
