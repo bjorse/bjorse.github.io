@@ -6,7 +6,7 @@ categories: development
 comments: true
 ---
 
-Alright. After reading countless blog posts and looking through a few books about it, I'm finally ready to produce something noteworthy in [Elixir][elixir]. Usually, my way to get to know new stuff is just by using it, but in this case I actually wanted to get some basic knowledge before getting started, in an attempt to see if it gets me ahead faster.
+Alright. After reading countless blog posts and looking through a few books about it, I'm finally ready to produce something noteworthy in [Elixir][elixir]. Usually, my way to get to know new stuff is just by using it, but in this case I actually wanted to get some basic knowledge before getting started, in an attempt to see if it gets me faster ahead.
 
 Elixir is a functional programming language, which is the only type of languages I'm touching these days, at least when it's about learning something new for my own development (long story short: tired of OOP and excited about FP). However, I'm not really set on my opinion on the Elixir syntax so far. After finding my love earlier this year in [Clojure][clojure], there's *a lot* needed to top that. First of all, the syntax is way too verbose for my personal taste. I know [José][jose-valim] found a lot of inspiration in Ruby, which is a language I fell in love with many years ago, but today I cannot seem to find any of that love to be honest. In comparision to Clojure (sorry, but everything about Elixir will be compared to Clojure), it feels like writing a novel to accomplish something (not a fan of words in languages, like `do` and `end`). Also, after doing a lot of [Lodash][lodash] in JavaScript a few years back, Clojure felt intuitive and a natural way to get something done because of that.
 
