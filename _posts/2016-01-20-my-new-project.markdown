@@ -5,7 +5,7 @@ date: 2016-01-20 22:00:00
 categories: development
 comments: true
 ---
-So, the time has finally come to launch my new personal project. Its purpose is solely for my own development - a place where I may try out new (for me) technologies, but still have something to work on, and something to maintain. So, I'm thinking it would be fun to develop some features and then force myself to switch/add technologies at times, just to learn by doing. The project is going to develop locally on my machine at first, but when the time comes it will be a public repo on GitHub, available for anyone. We'll see, maybe I'll get to know other developers with the same thoughts as me, and even collaborate on the project with the as well? Time will tell.
+So, the time has finally come to launch my new personal project. Its purpose is solely for my own development - a place where I may try out new (for me) technologies, but still have something to work on, and something to maintain. So, I'm thinking it would be fun to develop some features and then force myself to switch/add technologies at times, just to learn by doing. The project is going to develop locally on my machine at first, but when the time comes it will be a public repo on GitHub, available for anyone. We'll see, maybe I'll get to know other developers with the same thoughts as me, and even collaborate on the project with me as well? Time will tell.
 
 These are some of the guidelines I'm going to follow during this project:
 * separate code early and do not mix stuff by thinking it will be parted later during some refactoring session (it will probably not happen, since this is a free time project)
