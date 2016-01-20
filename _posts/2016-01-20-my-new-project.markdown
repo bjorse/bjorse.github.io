@@ -14,6 +14,7 @@ These are some of the guidelines I'm going to follow during this project:
 * use static/local data as far as possible. Wait until the very last to persist data in any kind of database to see where it fits - [polyglot][polyglot]?
 
 The technologies I'm going to use is:
+
 * [Elixir][elixir] with [Phoenix][phoenix]
 * [React][react] and [Redux][redux]. I thought I would use plain JavaScript at first to learn it well, and then perhaps add some [ClojureScript][clojure] (by using [Reagent][reagent]) later to mix it up (or even replace some features?)
 
