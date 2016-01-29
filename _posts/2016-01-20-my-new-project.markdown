@@ -18,7 +18,7 @@ The technologies I'm going to use is:
 * [Elixir][elixir] with [Phoenix][phoenix]
 * [React][react] and [Redux][redux]. I thought I would use plain JavaScript at first to learn it well, and then perhaps add some [ClojureScript][clojure] (by using [Reagent][reagent]) later to mix it up (or even replace some features?)
 
-This feels good and I'm going to let it stay there at first, and then decide on where to take the project later when I'm getting somewhere. Let me know if you're interested in collaboration on this one - it would be fun to work with someone else! There will be blog posts like these to come in the future with project updates!
+This feels good and I'm going to let it stay there at first, and then decide on where to take the project later when I'm getting somewhere.
 
 {% include twitter.html %}
 

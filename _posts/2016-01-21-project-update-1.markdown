@@ -15,7 +15,7 @@ I'm quickly going to go through the areas I'm having trouble with.
 ## Immutability
 Although I've known about all the positive consequences by using immutable data for a while now, a really nice thing occurred to me today: immutability has become a major part of my development style, and something that I have come to rely on. It's weird to realise this, because I'm spending most of my days writing code in a language that's not really associated with immutable data (C#). The reason it occurred to me now, I think, is because I'm expecting React and its friends to use immutable data by default. However, JavaScript does not support immutability natively, and that's a problem for me. Sure, there are libraries that will let me do this, but should it really be that way?
 
-Immutability has given me a strong sense of personal security in a way that I'm sure the code I'm writing is going to behave the way it's meant to do. Isolated, and not affecting something else it's not supposed to affect. It's the same kind of security that I felt when I began to use TDD a few years back.
+Immutability has given me a strong sense of confidence in a way that I'm sure the code I'm writing is going to behave the way it's meant to do. Isolated, and not affecting something else it's not supposed to affect. It's the same kind of confidence that I felt when I began to use TDD a few years back.
 
 Like I said - JavaScript may support immutability through libraries, but I rather use a language that's built around it and encourages me to use it.
 

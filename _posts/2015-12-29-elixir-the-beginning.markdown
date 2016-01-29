@@ -16,8 +16,6 @@ Finally, the last thing that bugs me so far is the possibility to omit parenthes
 
 There are a lot of things I love about the Elixir syntax as well, like the pattern matching and the pipeline operator. The winning point for me however is not the syntax, but the Erlang VM. Concurrency made right from the beginning. This is where I think functional programming will be the winner, concurrent programming where scalability is important.
 
-Just thought of something: of course I will be writing for the web, and perhaps I will find a way to use ClojureScript on the client side. If it's not already made, maybe I'll code a [Phoenix][phoenix] wrapper in ClojureScript, and use [Reagent][reagent] (a gorgeous [React][react] wrapper) to use functional programming on the client side as well. Yeah, that sounds good. Let's do that first :)
-
 {% include twitter.html %}
 
 [elixir]: http://elixir-lang.org
