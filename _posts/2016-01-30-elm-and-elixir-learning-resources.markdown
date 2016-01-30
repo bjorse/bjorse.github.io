@@ -8,7 +8,7 @@ comments: true
 
 I thought that I would share some resources I've used so far when learning Elm. I will share some links to resources on Elixir as well, because I think that you'll (like me) want to use Elm together with [Phoenix][phoenix].
 
-## The official documentation of Elm and FRP
+## The official documentation of Elm
 Of course, [the official documentation][official-doc] is a great place to start. Now, I mainly use it mainly as a resource when reading other tutorials or when coding, because it really covers everything you need to know to get started up to an advanced level.
 
 ## The Pragmatic Studio Elm course
@@ -22,6 +22,9 @@ When you're ready to actually produce some code, I really liked [this post][live
 
 ## Game programming in Elm
 [This blog post][making-pong] goes through how to code Pong in Elm. It's really fun if you want immediate feedback and want a break from coding web pages. If you want a tougher example to work with, I found [this article][elm-breakout-game] pretty interesting, where a programmer used to imperative programming tries out Elm by coding Breakout.
+
+## The official documentation of Elixir
+If you're not familiar with Elixir yet, you'll find the official documentation [here][elixir-doc].
 
 ## Elixir (Phoenix) and Elm
 When you're ready for the next step (you want to use a high performance backend at this point), you'll want to use Elm together with Elixir/Phoenix. First, I recommend watching [this video][elixir-should-take-over-the-world] for getting inspiration and a bigger picture on things. Next, watch [this video][phoenix-with-elm-youtube] from the same conference to get a quick introduction how to integrate Elm with Phoenix. You may read [this blog post][phoenix-with-elm-blog] (there are several parts) that goes through the same stuff as in the video (it's written by the same person who did the presentation).
@@ -45,6 +48,7 @@ I hope you really enjoy learning Elm and Elixir like I do. I'm still just a novi
 [live-signup-form]: http://tech.noredink.com/post/129641182738/building-a-live-validated-signup-form-in-elm
 [making-pong]: http://elm-lang.org/blog/making-pong
 [elm-breakout]: https://github.com/Dobiasd/articles/blob/master/switching_from_imperative_to_functional_programming_with_games_in_Elm.md
+[elixir-doc]: http://elixir-lang.org/
 [phoenix-with-elm-youtube]: https://www.youtube.com/watch?v=MgFDZx1LmOE
 [phoenix-with-elm-blog]: http://www.cultivatehq.com/posts/phoenix-elm-1/
 [elixir-microservices]: http://blog.plataformatec.com.br/2015/06/elixir-in-times-of-microservices/
