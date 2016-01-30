@@ -18,4 +18,4 @@ I'm having trouble with the [Elm integration with brunch][elm-brunch]. For a whi
 [hp-stream]: http://store.hp.com/webapp/wcs/stores/servlet/ContentView?eSpotName=Stream11&storeId=10151
 [cbpp]: https://crunchbangplusplus.org/
 [elm-brunch]: https://github.com/madsflensted/elm-brunch
-[elm-brunch-bug]: https://github.com/madsflensted/elm-brunch
+[elm-brunch-bug]: https://github.com/madsflensted/elm-brunch/issues/6
