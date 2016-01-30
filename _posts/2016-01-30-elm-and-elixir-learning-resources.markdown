@@ -9,19 +9,19 @@ comments: true
 I thought that I would share some resources I've used so far when learning Elm. I will share some links to resources on Elixir as well, because I think that you'll (like me) want to use Elm together with [Phoenix][phoenix].
 
 ## The official documentation of Elm
-Of course, [the official documentation][official-doc] is a great place to start. After getting a bit into learning the language, I now mainly use it mainly as a resource when reading other tutorials or when coding, because it really covers everything you need to know to get started up to an advanced level.
+Of course, [the official documentation][official-doc] is a great place to start. After getting a bit into learning the language, I now mainly use it as a resource when reading other tutorials or when coding, because it really covers everything you need to know to get started up to an advanced level.
 
 ## The Pragmatic Studio Elm course
 If you prefer watching video tutorials, there's a really appreciated course over at [The Pragmatic Studio][pragmatic-studio]. You get to watch three chapters for free, and then you have to buy the rest of the course. It may be worth the money if you rather watch videos than reading tutorials. I haven't watched this myself though, so I cannot give any personal review.
 
 ## The Elm compiler
-This may sound weird if you're not used to it (I wasn't), but a great learning tool is the Elm compiler. It is *really good* at telling you what's wrong with your code. [This blog post][compiler-blog] tells you more about it. Bottom line is, don't only rely on guides and documentation, sometimes it's good just to explore the language on your own and let the compiler help you when it goes wrong.
+This may sound weird if you're not used to it (I wasn't), but a great learning tool is the Elm compiler. It is *really good* at telling you what's wrong with your code. [This blog post][compiler-blog] tells you more about it. Bottom line is, don't just rely on guides and documentation, sometimes it's good just to explore the language on your own and let the compiler help you when it goes wrong.
 
 ## Getting started with front end development
-When you're ready to actually produce some code, I really liked [this post][live-signup-form]. It goes through setting upp a live validated signup form in Elm. It covers the basics then goes through tougher parts, like communicating with the outside world. This helped me quite a bit.
+When you're ready to actually produce some code, I really liked [this post][live-signup-form]. It goes through setting upp a live validating signup form in Elm. It covers the basics then goes through tougher parts, like communicating with the outside world. This helped me quite a bit.
 
 ## Game programming in Elm
-[This blog post][making-pong] goes through how to code Pong in Elm. It's really fun if you want immediate feedback and want a break from coding web pages. If you want a tougher example to work with, I found [this article][elm-breakout] pretty interesting, where a programmer used to imperative programming tries out Elm by coding Breakout.
+[This blog post][making-pong] goes through how to code Pong in Elm. It's really fun if you want immediate feedback and want a break from coding web pages. If you want a tougher example to work with, I found [this article][elm-breakout] pretty interesting, where a programmer used to imperative programming tries out Elm by implementing Breakout.
 
 ## The official documentation of Elixir
 If you're not familiar with Elixir yet, you'll find the official documentation [here][elixir-doc].
