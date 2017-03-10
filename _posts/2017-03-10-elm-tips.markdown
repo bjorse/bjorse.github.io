@@ -1,0 +1,124 @@
+---
+layout: post
+title: "Elm tips"
+date: 2017-03-xx 14:00:00
+categories: development
+comments: true
+---
+
+After finally getting my first Elm app into production this february, I thought it would be nice to put down some thoughts and experiences from my time with Elm so far. This post may contain some input for beginners who's writing their first bigger app (it will mostly be code related).
+
+First of all, I've gotten so much support from the Elm Slack channels and Elm related blog posts, so I'll try to give praise to the sources of my own knowledge, when possible.
+
+## It's so easy to get started and test things out
+
+Compared to other ways to develop web apps, Elm is pretty easy to get started with. You can get very far without even setting up your local development environment, thanks to various online editors ([the official][elm-lang-try], [runelm.io][runelmio], and the recently shipped [Ellie][ellie]).
+
+With the [architecture][architecture] already in place, you've been freed up on time taking decisions regarding archicture - which lib should I use for state handling? Immutable or not? Which rendering method to use? Even how to solve remote communication is not an issue. That means you get to do the fun stuff right away. And while you're limited to where in your code you can do certain things (side effects), you're completely free otherwise, and that freedom doesn't come with a high price of complexity.
+
+## Elm has no components, just functions
+
+The component based idea is vital in some JavaScript libs like React and Angular 2, but no such thing exists in Elm. Save yourself some time by wiping the thought *"how do I write a component?"* out of your head right from the start. Elm just has functions which will produce something based on the arguments provided. There's no local state - in Elm you got *one* model (one source of truth) with all the accessible data in it, and html is produced by taking that model as an argument and returning a html declaration based on that model. Nothing special at all.
+
+So, in Elm we're talking about *"update functions"* and *"view functions"*. Components aren't a concept at all.
+
+## Elm is a DSL
+
+Elm is a language for developing web apps - nothing else (at least not right now). So, comparing it to general purpose languages is unfair and will get you nowhere. Yes, the lack of for example type classes may be questionable and even off-putting if you're coming from languages like Haskell or PureScript, but Elm is still a young language and a type class-ish feature will [probably be introduced in a future version][type-classes] of Elm. But look beyond that for now and appreciate Elm for what it is - a great way to write web apps where you're in control and completely safe, *even though* it's still young. Also, Elm is incredibly beginner friendly if you're coming from JavaScript and not used to functional programming. The level of effort required to get productive is low - the most basic concepts will get you far and there're not many "hidden features" only known to more experienced users. You'll face most of the features the language has to offer pretty early.
+
+## Elm is not a boolean
+
+The title refers to the idea that either you use Elm, or not at all. But that statement isn't true. [Evan][evan] himself wrote a [blog post][elm-at-work] on this and how you gradually introcudes Elm in your existing code. It's a great way to possibly try it out with existing production code.
+
+## Decoding is hard
+
+Decoding data in your Elm app is by many (me included) considered as the hardest part to wrap your head around in the beginning. The boilerplate code needed can be seen as a great typing skills training as well.
+
+Native Elm decoding is not really intuitive (not to me, at least) - but [elm-decode-pipeline][elm-decode-pipeline] by [NoRedInk][noredink] will help you a lot. There's a lot of discussions throughout the community on how to improve decoding, so hopefully it will get way better (soon, I hope).
+
+[Noah][eeue56] recently wrote a [blog post][json-decoding] on this subject, so I recommend you to read it when you've understood the native decoding feature, to understand it even better and to be aware of potential problems you may encounter. Make sure to read his other blog posts as well as he's got deep knowledge/understanding of the Elm internals.
+
+## Use elm-format
+
+The community driven [elm-format][elm-format] will put an end to all possible code style discussions. This is a no-brainer - use it and all code will pretty much look the same regardless the author, which is amazing. Just remember to configure your editor to format on save!
+
+## Map all the things
+
+Writing bigger apps is one of the least obvious parts of Elm, because you will not get enough help or directions from the language itself (or official docs) on how to structure the code at scale. I made a huge mistake early in my now-in-production-app by first organizing the code by architecture (state, view, model), instead of feature. That is, instead of grouping update/view etc for each sub page in its own folder, I created folders for each architecture part, and then mixed them up (the features). That's because when I read the package docs on [Html.map][html-map], it explicitly said: *"This should not come in handy too often. Definitely read [this][reuse] before deciding if this is what you want."*. However, the article it linked to didn't really help me much, and I naively just kept on writing code without even exploring another solution using `Html.map`. I got too intimitated by that package documentation text, I guess.
+
+Although, as my app grew bigger, I realized I had to reconsider because the structure started to get messy and adding new stuff really was painful. I had read [Kris Jenkins'][jenkster] [blog post][app-structure] on how he structured his Elm apps, and after a short discussion on Slack I figured this was *the* way to go when writing bigger apps, despite its `Html.map` (and `Cmd.map`) usage.
+
+So, read Kris blog post and follow those instructions - you will probably not find a better way. Yes, it may generate some boilerplate code with various exhausting mapping calls in your root update function and root view function - but it's definitely worth it in the end.
+
+## Refactoring is a piece of cake
+
+As I in the previous section had realized I have to restructure my entire app, it was surprisingly easy and painless to go through with it. I just aggressively moved stuff around to new folders and tied them together as good as I could, and then just followed the compiler errors it generated. When I was done, it just worked like before and nothing had changed from the outside world point of view. I didn't sweat once and felt completely safe with it, and I only spent a few hours getting it done.
+
+*Tip: use type signatures on your functions when you can - it will help your refactoring sessions. Type inference may give less obvious error messages from the compiler.*
+
+This experience is also in line with the train of thought I've had when coding Elm - it doesn't keep your mind burdened by making you keeping track of things yourself. The combination of the architecture, compiler, type safety, immutability, and side-effect-free code is a true relief for your brain.
+
+## Keep the model explicit
+
+Avoid booleans for tracking progress - especially when there's data involved. By this I mean; avoid implicit declared data fields while data is loading (or saving), which usually looks like this (in JavaScript):
+
+{% highlight javascript %}
+var usersState = { 
+  isLoadingUsers = true,
+  users = [] 
+}
+{% endhighlight %}
+
+[Union types][union-types] are heaven when coming to modelling explicit state, and if you use them right and instead of implicit fields (like empty lists), your code gets explicit all the way down. You can't escape the type system, so make the best use of it!
+
+You've got `Maybe` ready to use, but I recommend looking even beyond that in cases like this, because there are possibly needs for other states than "data exists or not" - for example an error state. Kris Jenkins has written a [blog post][slay-antipattern] about the "fetch data" problem (and published a ready-to-use package). I also recommend watching [making impossible states impossible][impossible-states] by [Richard Feldman][rtfeldman], because it sums it up really well and partly goes beyond the model and also includes thoughts/directions on module api.
+
+## Side effects are hard
+
+Simple tasks in some other languages, like getting the current time or a random number, may be intimidating for newcomers to Elm. My advice is to put it all in the right perspective: the positive effects of handling side effects on the side and letting your code be pure heavily outweights the negative side by the increase of complexity in doing the opposite. The refactoring work I described in an earlier section would been a lot harder with side effects and dependencies allowed everywhere, despite the type system.
+
+Without trying to be rude - accept that side effects may be hard at first in Elm, and deal with it. You'll embrace and appreciate it increasingly with every line of code written.
+
+## Reduce number of ports
+
+Ports are the scary part of Elm, because those includes JavaScript. When it comes to the "no runtime errors" promise, ports are probably where they'll occur (unless you abuse Elm somehow). If you intend heavy usage of JavaScript, may it be through using an existing JavaScript library, you should consider using something else than Elm, in my opinion.
+
+Also, if you're using JavaScript to mess with the DOM, you're on thin ice. Elm is using virtual DOM and makes optimizations based on the Elm code, so touching it from the outside has a number of drawbacks. Richard Feldman has a nice talk on [Elm and web components][web-components], which sheds some light on this issue and how web components may be a way to go to let Elm keep control of the state and DOM.
+
+## App wide Msg
+
+When writing bigger apps and you're structuring it like suggested in a previous section, you'll most likely face another problem: how do pages/different parts of your app communicate with each other? Let's say you want to send a message up to the root update function of your app. Except including modules and creating circular references (which wont compile, of course, which rules that out), the architecture really has no support for this. I solved this in my app by introducing another concept - **OutMsg**. Simply put, instead of just returning the model and a `Cmd msg` from your update function, you've got a third value in your tuple - the **OutMsg**.
+
+[Folkert de Vries][folkertdev] has written a [blog post][outmsg] on this subject, which I recommend reading. He followed it up with [another blog post][outmsg2], where he introduces a [package][outmsg-package] to use.
+
+## Thanks
+
+Thanks for reading this blog post. I will finish it up by giving a huge thanks to the Elm community. It's by far the most friendly and helpful programming language community I've yet to encounter. Keep up the good work!
+
+{% include twitter.html %}
+
+[elm-lang-try]: http://elm-lang.org/try
+[runelmio]: https://runelm.io/
+[ellie]: https://ellie-app.com
+[architecture]:  https://guide.elm-lang.org/architecture/
+[type-classes]: https://github.com/elm-lang/elm-compiler/issues/1039
+[evan]: https://twitter.com/czaplic
+[elm-at-work]: http://elm-lang.org/blog/how-to-use-elm-at-work
+[elm-decode-pipeline]: https://github.com/NoRedInk/elm-decode-pipeline
+[noredink]: http://tech.noredink.com/
+[eeue56]: https://medium.com/@eeue56
+[json-decoding]: https://medium.com/@eeue56/json-decoding-in-elm-is-still-difficult-cad2d1fb39ae#.xj7pqa70w
+[elm-format]: https://github.com/avh4/elm-format
+[html-map]: http://package.elm-lang.org/packages/elm-lang/html/latest/Html#map
+[reuse]: https://guide.elm-lang.org/reuse/
+[jenkster]: http://blog.jenkster.com/
+[app-structure]: http://blog.jenkster.com/2016/04/how-i-structure-elm-apps.html]
+[union-types]: https://guide.elm-lang.org/types/union_types.html
+[slay-anti-pattern]: http://blog.jenkster.com/2016/06/how-elm-slays-a-ui-antipattern.html
+[impossible-states]: https://www.youtube.com/watch?v=IcgmSRJHu_8
+[rtfeldman]: https://twitter.com/rtfeldman
+[web-components]: https://www.youtube.com/watch?v=ar3TakwE8o0
+[folkertdev]: http://folkertdev.nl/ 
+[outmsg]: http://folkertdev.nl/blog/elm-child-parent-communication/
+[outmsg2]: http://folkertdev.nl/blog/elm-child-parent-communication-continued/
+[outmsg-package]: http://package.elm-lang.org/packages/folkertdev/outmessage/latest/
