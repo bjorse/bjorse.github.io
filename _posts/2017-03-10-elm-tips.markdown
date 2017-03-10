@@ -58,7 +58,7 @@ As I in the previous section had realized I have to restructure my entire app, i
 
 *Tip: use type signatures on your functions when you can - it will help your refactoring sessions. Type inference may give less obvious error messages from the compiler.*
 
-This experience is also in line with the train of thought I've had when coding Elm - it doesn't keep your mind burdened by making you keeping track of things yourself. The combination of the architecture, compiler, type safety, immutability, and side-effect-free code is a true relief for your brain.
+This experience is also in line with the train of thought I've had when coding Elm - it doesn't keep your mind burdened by making you keep track of things yourself. The combination of the architecture, compiler, type safety, immutability, and side-effect-free code is a true relief for your brain.
 
 ## Keep the model explicit
 
@@ -91,7 +91,7 @@ Also, if you're using JavaScript to mess with the DOM, you're on thin ice. Elm i
 
 When writing bigger apps and you're structuring it like suggested in a previous section, you'll most likely face another problem: how do pages/different parts of your app communicate with each other? Let's say you want to send a message up to the root update function of your app. Except including modules and creating circular references (which wont compile, of course, which rules that out), the architecture really has no support for this. I solved this in my app by introducing another concept - **OutMsg**. Simply put, instead of just returning the model and a `Cmd msg` from your update function, you've got a third value in your tuple - the **OutMsg**.
 
-[Folkert de Vries][folkertdev] has written a [blog post][outmsg] on this subject, which I recommend reading. He followed it up with [another blog post][outmsg2], where he introduces a [package][outmsg-package] to use.
+[Folkert de Vries][folkertdev] has written a [blog post][outmsg] on this subject, which I recommend reading. He followed it up with [another blog post][outmsg2], where he introduces a [package][outmsg-package] to use, and talking about drawbacks with this approach.
 
 ## Thanks
 
