@@ -71,7 +71,7 @@ var usersState = {
 
 [Union types][union-types] are heaven when coming to modelling explicit state, and if you use them right and instead of implicit fields (like empty lists), your code gets explicit all the way down. You can't escape the type system, so make the best use of it!
 
-You've got `Maybe` ready to use, but I recommend looking even beyond that in cases like this, because there are possibly needs for other states than "data exists or not" - for example an error state. Kris Jenkins has written a [blog post][slay-antipattern] about the "fetch data" problem (and published a ready-to-use package). I also recommend watching [making impossible states impossible][impossible-states] by [Richard Feldman][rtfeldman], because it sums it up really well and partly goes beyond the model and also includes thoughts/directions on module api.
+You've got `Maybe` ready to use, but I recommend looking even beyond that in cases like this, because there are possibly needs for other states than "data exists or not" - for example an error state. Kris Jenkins has written a [blog post][slay-anti-pattern] about the "fetch data" problem (and published a ready-to-use package). I also recommend watching [making impossible states impossible][impossible-states] by [Richard Feldman][rtfeldman], because it sums it up really well and partly goes beyond the model and also includes thoughts/directions on module api.
 
 ## Side effects are hard
 
