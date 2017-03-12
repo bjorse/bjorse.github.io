@@ -24,7 +24,7 @@ So, in Elm we're talking about *"update functions"* and *"view functions"*. Comp
 
 ## Elm is a DSL
 
-Elm is a language for developing web apps - nothing else (at least not right now). So, comparing it to general purpose languages is unfair and will get you nowhere. Yes, the lack of for example type classes may be questionable and even off-putting if you're coming from languages like Haskell or PureScript, but Elm is still a young language and a type class-ish feature will [probably be introduced in a future version][type-classes] of Elm. But look beyond that for now and appreciate Elm for what it is - a great way to write web apps where you're in control and completely safe, *even though* it's still young. Also, Elm is incredibly beginner friendly if you're coming from JavaScript and not used to functional programming. The level of effort required to get productive is low - the most basic concepts will get you far and there're not many "hidden features" only known to more experienced users. You'll face most of the features the language has to offer pretty early.
+Elm is a language for developing web apps - nothing else (at least not right now). So, comparing it to general purpose languages is unfair and will get you nowhere. Yes, the lack of for example type classes may be questionable and even off-putting if you're coming from languages like Haskell or PureScript, but Elm is still a young language and a type class-ish feature will [probably be introduced in a future version][type-classes] of Elm. But look beyond that for now and appreciate Elm for what it is - a great way to write web apps where you're in control and completely safe, *despite* its young age. Also, Elm is incredibly beginner friendly if you're coming from JavaScript and not used to functional programming. The level of effort required to get productive is low - the most basic concepts will get you far and there're not many "hidden features" only known to more experienced users. You'll face most of the features the language has to offer pretty early.
 
 ## Elm is not a boolean
 
@@ -77,7 +77,7 @@ You've got `Maybe` ready to use, but I recommend looking even beyond that in cas
 
 ## Side effects are hard
 
-Simple tasks in some other languages, like getting the current time or a random number, may be intimidating for newcomers to Elm. My advice is to put it all in the right perspective: the positive effects of handling side effects on the side and letting your code be pure heavily outweights the negative side by the increase of complexity in doing the opposite. The refactoring work I described in an earlier section would been a lot harder with side effects and dependencies allowed everywhere, despite the type system.
+Simple tasks in some other languages, like getting the current time or a random number, may be intimidating for newcomers to Elm. My advice is to put it all in the right perspective: the positive effects of handling side effects on the side and letting your code be pure, heavily outweights the negative side by the increase of complexity in doing the opposite. The refactoring work I described in an earlier section would been a lot harder with side effects and dependencies allowed everywhere, despite the type system.
 
 Without trying to be rude - accept that side effects may be hard at first in Elm, and deal with it. You'll embrace and appreciate it increasingly with every line of code written.
 
